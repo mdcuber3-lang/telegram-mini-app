@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <title>Iubidubi Mini App</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <div class="logo">iubibox</div>
+      <div class="sub"> </div>
+    </div>
+
+    <button id="cityBtn" class="pill">
+      <span>📍</span>
+      <span id="cityLabel">oraș: alege</span>
+      <span>▾</span>
+    </button>
+  </header>
+
+  <main class="main">
+    <section id="tab-menu" class="tab active">
+      <div class="grid" id="productsGrid"></div>
+    </section>
+
+    <section id="tab-cart" class="tab">
+      <div id="cartList" class="cart-list"></div>
+
+      <div class="box">
+        <label class="row">
+          <span>nume</span>
+          <input id="name" placeholder="Doina" />
+        </label>
+        <label class="row">
+          <span>telefon</span>
+          <input id="phone" placeholder="+373..." />
+        </label>
+        <label class="row">
+          <span>adresă</span>
+          <input id="address" placeholder="strada, casa, etaj..." />
+        </label>
+        <label class="row">
+          <span>comentariu</span>
+          <input id="comment" placeholder="interfon / oră preferată..." />
+        </label>
+      </div>
+
+      <div class="total">
+        <span>total</span>
+        <strong id="totalAmount">0</strong>
+      </div>
+
+      <button id="checkoutBtn" class="primary">trimite comanda</button>
+      <div class="hint" id="checkoutHint"></div>
+    </section>
+
+    <section id="tab-profile" class="tab">
+      <div class="box">
+        <h3>profil</h3>
+        <div class="muted" id="profileInfo">—</div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="nav">
+    <button class="navbtn active" data-tab="menu">meniu</button>
+    <button class="navbtn" data-tab="cart">coș</button>
+    <button class="navbtn" data-tab="profile">profil</button>
+  </nav>
+
+  <div id="cityModal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-title">alege oraș</div>
+      <div class="modal-list" id="cityList"></div>
+      <button class="ghost" id="closeCity">închide</button>
+    </div>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
