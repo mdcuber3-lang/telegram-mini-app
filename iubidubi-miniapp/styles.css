@@ -1,4 +1,20 @@
-:root { --bg:#0b0b0c; --card:#131316; --text:#f4f4f5; --muted:#a1a1aa; --line:#232329; }
+/* LIGHT MODE – default */
+:root{
+  --bg:#ffffff;
+  --card:#f6f7f9;
+  --text:#111827;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+}
+
+/* DARK MODE – when Telegram is dark */
+:root[data-theme="dark"]{
+  --bg:#0b0b0c;
+  --card:#131316;
+  --text:#f4f4f5;
+  --muted:#a1a1aa;
+  --line:#232329;
+}
 * { box-sizing:border-box; }
 body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; background:var(--bg); color:var(--text); }
 .header { padding:14px 14px 10px; display:flex; align-items:center; justify-content:space-between; gap:12px; position:sticky; top:0; background:linear-gradient(var(--bg), rgba(11,11,12,.85)); backdrop-filter: blur(8px); }

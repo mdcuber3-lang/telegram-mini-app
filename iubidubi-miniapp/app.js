@@ -11,6 +11,16 @@ if (tg) {
   tg.ready();
   tg.expand();
 }
+// === Telegram theme sync (dark / light) ===
+if (tg) {
+  const applyTheme = () => {
+    document.documentElement.dataset.theme =
+      tg.colorScheme === "dark" ? "dark" : "light";
+  };
+
+  applyTheme();
+  tg.onEvent("themeChanged", applyTheme);
+}
 
 const state = {
   city: null,
